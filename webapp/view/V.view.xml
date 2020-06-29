@@ -1,102 +1,104 @@
 <mvc:View
-	controllerName="sap.m.sample.SplitApp.C"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<SplitApp
-		id="SplitAppDemo"
-		initialDetail="detail"
-		initialMaster="master"
-		orientationChange=".onOrientationChange">
-		<detailPages>
-			<Page
-				id="detail"
-				title="Основные данные"
-				backgroundDesign= "Solid"
-				class="sapUiStdPage">
-				<Label text="Имя:" />
-				<MaskInput mask="0000000000" placeholderSymbol = " " value="" width="100%" placeholder="Введите имя ...">
-    				<rules>
-       					 <MaskInputRule maskFormatSymbol = "0" regex = "[a-zA-Z]"/>
-    				</rules>
-				</MaskInput>
-				<Label text="Фамилия:" />
-				<MaskInput mask="0000000000" placeholderSymbol = " " value="" width="100%" placeholder="Введите фамилию ...">
-    				<rules>
-       					 <MaskInputRule maskFormatSymbol = "0" regex = "[a-zA-Z]"/>
-    				</rules>
-				</MaskInput>
-				<Label text="Отчество:" />
-				<MaskInput mask="0000000000" placeholderSymbol = " " value="" width="100%" placeholder="Введите отчество ...">
-    				<rules>
-       					 <MaskInputRule maskFormatSymbol = "0" regex = "[a-zA-Z]"/>
-    				</rules>
-				</MaskInput>
-				<Label text="Дата рождения:" />
-				<DatePicker
-					id="DP1"
-					placeholder="Введите дату рождения ..."
-					class="sapUiSmallMarginBottom"/>
-				
-			</Page>
-			<Page
-				id="detailDetail"
-				title="Документы"
-				class="sapUiStdPage"
-				backgroundDesign= "Solid">
+        controllerName="sap.m.sample.SplitApp.controller.C"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <SplitApp
+            id="SplitAppDemo"
+            initialDetail="detail"
+            initialMaster="master"
+            orientationChange=".onOrientationChange">
+        <detailPages>
+            <Page
+                    id="detail"
+                    title="Основные данные"
+                    backgroundDesign="Solid"
+                    class="sapUiStdPage">
+                <Label text="Имя:"/>
+                <MaskInput mask="0000000000" placeholderSymbol=" " value="" width="100%" placeholder="Введите имя ...">
+                    <rules>
+                        <MaskInputRule maskFormatSymbol="0" regex="[a-zA-Z]"/>
+                    </rules>
+                </MaskInput>
+                <Label text="Фамилия:"/>
+                <MaskInput mask="0000000000" placeholderSymbol=" " value="" width="100%"
+                           placeholder="Введите фамилию ...">
+                    <rules>
+                        <MaskInputRule maskFormatSymbol="0" regex="[a-zA-Z]"/>
+                    </rules>
+                </MaskInput>
+                <Label text="Отчество:"/>
+                <MaskInput mask="0000000000" placeholderSymbol=" " value="" width="100%"
+                           placeholder="Введите отчество ...">
+                    <rules>
+                        <MaskInputRule maskFormatSymbol="0" regex="[a-zA-Z]"/>
+                    </rules>
+                </MaskInput>
+                <Label text="Дата рождения:"/>
+                <DatePicker
+                        id="DP1"
+                        placeholder="Введите дату рождения ..."
+                        class="sapUiSmallMarginBottom"/>
 
-				<Label text="Серия паспорта:" />
-				<MaskInput mask="00 00" placeholderSymbol = "_" value="" width="100%"> 
-    				<rules>
-       					 <MaskInputRule maskFormatSymbol = "0" regex = "[0-9]"/>
-    				</rules>
-				</MaskInput>
-				<Label text="Номер паспорта:" />
-				<MaskInput mask="000000" placeholderSymbol = "_" value="" width="100%">
-    				<rules>
-       					 <MaskInputRule maskFormatSymbol = "0" regex = "[0-9]"/>
-    				</rules>
-				</MaskInput>
-				<Label text="Номер снилс:" />
-				<MaskInput mask="000-000-000 00" placeholderSymbol = "_" value="" width="100%">
-    				<rules>
-       					 <MaskInputRule maskFormatSymbol = "0" regex = "[0-9]"/>
-    				</rules>
-				</MaskInput>
-			</Page>
-			<Page
-				id="detail2"
-				title="Образование"
-				backgroundDesign= "Solid"
-				class="sapUiStdPage">
-				<Panel
-				id="Education"
-				headerText="Образование">
-				<Button text = "+"
-						press = "EducationPress">					
-				</Button>
-				</Panel>
-				
-				<Button text = "Отправить"
-						
-						press = "SubmitPress">					
-				</Button>
-			</Page>
-		</detailPages>
-		<masterPages>
-			<Page
-				id="master2"
-				title=""
-				backgroundDesign= "List"
-				class="sapUiStdPage">
-				<List itemPress=".onListItemPress">
-					<items>
-						<StandardListItem title="Основные данные" type="Active" custom:to="detail" />
-						<StandardListItem title="Документы" type="Active" custom:to="detailDetail" />
-						<StandardListItem title="Образование" type="Active" custom:to="detail2" />
-					</items>
-				</List>
-			</Page>
-		</masterPages>
-	</SplitApp>
+            </Page>
+            <Page
+                    id="detailDetail"
+                    title="Документы"
+                    class="sapUiStdPage"
+                    backgroundDesign="Solid">
+
+                <Label text="Серия паспорта:"/>
+                <MaskInput mask="00 00" placeholderSymbol="_" value="" width="100%">
+                    <rules>
+                        <MaskInputRule maskFormatSymbol="0" regex="[0-9]"/>
+                    </rules>
+                </MaskInput>
+                <Label text="Номер паспорта:"/>
+                <MaskInput mask="000000" placeholderSymbol="_" value="" width="100%">
+                    <rules>
+                        <MaskInputRule maskFormatSymbol="0" regex="[0-9]"/>
+                    </rules>
+                </MaskInput>
+                <Label text="Номер снилс:"/>
+                <MaskInput mask="000-000-000 00" placeholderSymbol="_" value="" width="100%">
+                    <rules>
+                        <MaskInputRule maskFormatSymbol="0" regex="[0-9]"/>
+                    </rules>
+                </MaskInput>
+            </Page>
+            <Page
+                    id="detail2"
+                    title="Образование"
+                    backgroundDesign="Solid"
+                    class="sapUiStdPage">
+                <Panel
+                        id="Education"
+                        headerText="Образование">
+                    <Button text="+"
+                            press="onDraggableDialog">
+                    </Button>
+                </Panel>
+
+                <Button text="Отправить"
+
+                        press="SubmitPress">
+                </Button>
+            </Page>
+        </detailPages>
+        <masterPages>
+            <Page
+                    id="master2"
+                    title=""
+                    backgroundDesign="List"
+                    class="sapUiStdPage">
+                <List itemPress=".onListItemPress">
+                    <items>
+                        <StandardListItem title="Основные данные" type="Active" custom:to="detail"/>
+                        <StandardListItem title="Документы" type="Active" custom:to="detailDetail"/>
+                        <StandardListItem title="Образование" type="Active" custom:to="detail2"/>
+                    </items>
+                </List>
+            </Page>
+        </masterPages>
+    </SplitApp>
 </mvc:View>
